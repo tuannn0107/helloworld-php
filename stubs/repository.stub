@@ -1,0 +1,92 @@
+<?php
+
+namespace DummyNamspace;
+
+use App\Models\DummyModel;
+
+class DummyClass
+{
+    protected $model;
+    /**
+     * Instantiate reporitory
+     *
+     * @param DummyModel $model
+     */
+    public function __construct(DummyModel $model)
+    {
+        $this->model=$model;
+    }
+
+    /**
+     * Get All
+     * @return DummyModel[]
+     */
+    public function getAll()
+    {
+        return $this->model->all();
+    }
+
+
+    /**
+     * Get list DummyModel by filter
+     * @param DummyModel $filter
+     * @return DummyModel[]
+     */
+    public function readDummyModelList(DummyModel $filter)
+    {
+        // TODO filter condition
+        $results[] = $this->model->all();
+        return $results;
+    }
+
+
+    /**
+     * Get one
+     * @param $filter
+     * @return DummyModel
+     */
+    public function read(DummyModel $filter)
+    {
+        $result = $this->model->findOrFail($filter->id);
+        return $result;
+    }
+
+
+    /**
+     * Create
+     * @param DummyModel $model
+     * @return mixed
+     * @throws \Throwable
+     */
+    public function create(DummyModel $model)
+    {
+        // TODO define the model attributes here
+        return $model->save($model);
+    }
+
+
+    /**
+     * Update
+     * @param DummyModel $model
+     * @return bool|mixed
+     */
+    public function update(DummyModel $model)
+    {
+        //TODO set the primary key here
+
+        return $model->save($model);
+    }
+
+
+    /**
+     * Delete
+     *
+     * @param $model
+     * @return bool
+     * @throws \Exception
+     */
+    public function delete(DummyModel $model)
+    {
+        return $model->delete();
+    }
+}

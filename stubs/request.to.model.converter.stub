@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers\converter\req;
+
+use App\Models\DummyModel;
+use Illuminate\Http\Request;
+
+class RequestToDummyModelReqConverter
+{
+    /**
+     * @param Request $request
+     * @return DummyModel
+     */
+    public function convert(Request $request) {
+        $to = new DummyModel();
+        // TODO convert properties here
+        return $to;
+    }
+}
