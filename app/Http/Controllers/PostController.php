@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\converter\req\RequestToPostReqConverter;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Contracts\Foundation\Application;
@@ -78,7 +79,7 @@ class PostController extends Controller
      * @param $id
      * @return Application|Factory|RedirectResponse|Redirector|View
      */
-    public function edit($id)
+    public function edit(PostRequest $request, Post $post)
     {
         $post = null;
         try {

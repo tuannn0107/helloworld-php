@@ -80,7 +80,7 @@ class ControllerGenerateCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return  base_path('stubs/controller.customize.stub');
+        return  base_path('stubs/controller.stub');
     }
     /**
      * Get the default namespace for the class.

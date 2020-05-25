@@ -14,17 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
-            \App\Services\PostService::class
-        );
-
-        $this->app->singleton(
-            \App\Repositories\PostRepository::class
-        );
-
-        $this->app->singleton(
-            RequestToPostReqConverter::class
-        );
     }
 
     /**

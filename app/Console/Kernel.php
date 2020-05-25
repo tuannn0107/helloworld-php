@@ -2,11 +2,6 @@
 
 namespace App\Console;
 
-use App\Console\Commands\ControllerGenerateCommand;
-use App\Console\Commands\ModuleGenerateCommand;
-use App\Console\Commands\RepositoryGenerateCommand;
-use App\Console\Commands\RequestToModelConverterGenerateCommand;
-use App\Console\Commands\ServiceGenerateCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,13 +12,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [
-        ModuleGenerateCommand::class,
-        ControllerGenerateCommand::class,
-        RepositoryGenerateCommand::class,
-        ServiceGenerateCommand::class,
-        RequestToModelConverterGenerateCommand::class
-    ];
+    protected $commands = [];
 
     /**
      * Define the application's command schedule.

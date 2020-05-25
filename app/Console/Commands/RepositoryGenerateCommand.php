@@ -79,6 +79,8 @@ class RepositoryGenerateCommand extends GeneratorCommand
     {
         return  base_path('stubs/repository.stub');
     }
+
+
     /**
      * Get the default namespace for the class.
      *

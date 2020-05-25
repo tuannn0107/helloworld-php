@@ -33,11 +33,15 @@ class ModuleGenerateCommand extends GeneratorCommand
 
     public function handle()
     {
-        $this->call('make:model', ['name'=>'Models\\' . $this->getModuleName()]);
-        $this->call('make:controller', ['name'=>$this->getModuleName()]);
-        $this->call('make:requesttomodelconverter', ['name'=>$this->getModuleName()]);
-        $this->call('make:service', ['name'=>$this->getModuleName()]);
-        $this->call('make:repository', ['name'=>$this->getModuleName()]);
+        $moduleName = $this->getModuleName();
+        $this->call('make:model', ['name'=>'Models\\' . $moduleName, '-m'=>true]);
+        $this->call('make:observer', ['name' => $moduleName, '--model' => 'Models\\' . $moduleName]);
+        $this->call('make:controller', ['name' => $moduleName . 'Controller', '-r' => true, '--model' => 'Models\\' . $moduleName]);
+        $this->call('make:request', ['name' => $moduleName . 'Request']);
+        $this->call('make:rule', ['name' => $moduleName . 'Rule']);
+        $this->call('make:requesttomodelconverter', ['name'=>$moduleName]);
+        $this->call('make:service', ['name'=>$moduleName]);
+        $this->call('make:repository', ['name'=>$moduleName]);
     }
 
     /**
